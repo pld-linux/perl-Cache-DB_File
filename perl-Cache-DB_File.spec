@@ -45,7 +45,9 @@ dysk.
 %install
 rm -rf $RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT%{_mandir}/man3
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
+mv -f $RPM_BUILD_ROOT/usr/local/share/man//man3/* $RPM_BUILD_ROOT%{_mandir}/man3
 
 %clean
 rm -rf $RPM_BUILD_ROOT
