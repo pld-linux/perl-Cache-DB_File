@@ -4,7 +4,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Cache
 %define	pnam	DB_File
-Summary:	Cache::DB_File - Memory cache which, when full, swaps to DB_File database.
+Summary:	Cache::DB_File - Memory cache which, when full, swaps to DB_File database
 Summary(pl):	Cache::DB_File - bufor pamiêci okre¶lonej wielko¶ci, ,,swapuj±cy'' do bazy DB_File
 Name:		perl-Cache-DB_File
 Version:	0.2
