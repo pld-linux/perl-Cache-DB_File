@@ -1,6 +1,7 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+%bcond_without	tests	# do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Cache
 %define	pnam	DB_File
@@ -8,16 +9,17 @@ Summary:	Cache::DB_File - Memory cache which, when full, swaps to DB_File databa
 Summary(pl):	Cache::DB_File - bufor pamiêci okre¶lonej wielko¶ci, ,,swapuj±cy'' do bazy DB_File
 Name:		perl-Cache-DB_File
 Version:	0.2
-Release:	4
-License:	GPL/Artistic
+Release:	5
+# same as perl
+License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	48fa9e428e2d28ca90253031d0bf9d93
-BuildRequires:	perl-devel >= 5.6
-%if %{?_without_tests:0}%{!?_without_tests:1}
+%if %{with tests}
 BuildRequires:	perl-DB_File >= 1
 %endif
-BuildRequires:	rpm-perlprov >= 3.0.3-26
+BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -37,22 +39,22 @@ dysk.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor
 %{__make}
 
-%{!?_without_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_mandir}/man3
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
-mv -f $RPM_BUILD_ROOT/usr/local/share/man//man3/* $RPM_BUILD_ROOT%{_mandir}/man3
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{perl_sitelib}/%{pdir}/*.pm
+%{perl_vendorlib}/%{pdir}/*.pm
 %{_mandir}/man3/*
