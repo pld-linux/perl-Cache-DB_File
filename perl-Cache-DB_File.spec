@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Cache
-%define	pnam	DB_File
+%define		pdir	Cache
+%define		pnam	DB_File
 Summary:	Cache::DB_File - memory cache which, when full, swaps to DB_File database
 Summary(pl):	Cache::DB_File - bufor pamiêci okre¶lonej wielko¶ci, z wymian± do bazy DB_File
 Name:		perl-Cache-DB_File
