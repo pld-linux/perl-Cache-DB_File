@@ -16,6 +16,7 @@ Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version
 BuildRequires:	perl >= 5.6
 %if %{?_without_tests:0}%{!?_without_tests:1}
 BuildRequires:	perl-DB_File >= 1
+BuildRequires:	perl-Test-Simple
 %endif
 BuildRequires:	rpm-perlprov >= 4.0.2-104
 BuildArch:	noarch
