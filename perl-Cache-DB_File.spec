@@ -8,7 +8,7 @@ Summary:	Cache::DB_File - Memory cache which, when full, swaps to DB_File databa
 Summary(pl):	Cache::DB_File - bufor pamiêci okre¶lonej wielko¶ci, ,,swapuj±cy'' do bazy DB_File
 Name:		perl-Cache-DB_File
 Version:	0.2
-Release:	2
+Release:	4
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
