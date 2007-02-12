@@ -6,7 +6,7 @@
 %define		pdir	Cache
 %define		pnam	DB_File
 Summary:	Cache::DB_File - memory cache which, when full, swaps to DB_File database
-Summary(pl):	Cache::DB_File - bufor pamiêci okre¶lonej wielko¶ci, z wymian± do bazy DB_File
+Summary(pl.UTF-8):   Cache::DB_File - bufor pamiÄ™ci okreÅ›lonej wielkoÅ›ci, z wymianÄ… do bazy DB_File
 Name:		perl-Cache-DB_File
 Version:	0.2
 Release:	6
@@ -29,10 +29,10 @@ number of elements, and optional time limits on elements. When the
 memory cache reaches its limit, it will swap infrequently used
 elements to disk.
 
-%description -l pl
-Cache::DB_File to system bufora, który ma opcjonalny limit na liczbê
-elementów i opcjonalne limity czasowe na elementy. kiedy bufor w
-pamiêci osi±gnie limit, rzadko u¿ywane elementy zostan± zrzucone na
+%description -l pl.UTF-8
+Cache::DB_File to system bufora, ktÃ³ry ma opcjonalny limit na liczbÄ™
+elementÃ³w i opcjonalne limity czasowe na elementy. kiedy bufor w
+pamiÄ™ci osiÄ…gnie limit, rzadko uÅ¼ywane elementy zostanÄ… zrzucone na
 dysk.
 
 %prep
