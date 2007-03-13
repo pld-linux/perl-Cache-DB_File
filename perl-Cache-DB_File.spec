@@ -13,7 +13,7 @@ Release:	6
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://backpan.perl.org/authors/id/A/AS/ASKSH/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	48fa9e428e2d28ca90253031d0bf9d93
 %if %{with tests}
 BuildRequires:	perl-DB_File >= 1
@@ -56,5 +56,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{perl_vendorlib}/%{pdir}/*.pm
+%{perl_vendorlib}/Cache/*.pm
 %{_mandir}/man3/*
