@@ -1,10 +1,10 @@
 #
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
-#
-%include	/usr/lib/rpm/macros.perl
+
 %define		pdir	Cache
 %define		pnam	DB_File
+%include	/usr/lib/rpm/macros.perl
 Summary:	Cache::DB_File - memory cache which, when full, swaps to DB_File database
 Summary(pl.UTF-8):	Cache::DB_File - bufor pamięci określonej wielkości, z wymianą do bazy DB_File
 Name:		perl-Cache-DB_File
@@ -15,11 +15,12 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://backpan.perl.org/authors/id/A/AS/ASKSH/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	48fa9e428e2d28ca90253031d0bf9d93
+URL:		http://search.cpan.org/dist/Cache-DB_File/
+BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-DB_File >= 1
 %endif
-BuildRequires:	perl-devel >= 1:5.8.0
-BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
